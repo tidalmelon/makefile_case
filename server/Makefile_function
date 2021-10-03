@@ -1,0 +1,16 @@
+SRC := $(wildcard *.cpp ../math/*.cpp ../util/*.cpp)
+FS := $(notdir $(SRC))
+OBJ := $(patsubst %.cpp,%.o,$(FS))
+OBJ1 := $(patsubst %.cpp,%.o,$(notdir $(SRC)))
+OBJ2 := $(patsubst %.cpp,%.o,$(SRC))
+
+all:
+	@echo $(SRC)
+	@echo $(FS)
+	@echo $(OBJ)
+	@echo $(OBJ1)
+	@echo $(OBJ2)
+
+# main.cpp ../math/hmath.cpp ../math/math.cpp ../util/str.cpp
+# main.cpp hmath.cpp math.cpp str.cpp
+# main.o hmath.o math.o str.o
